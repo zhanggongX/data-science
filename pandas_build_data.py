@@ -55,7 +55,7 @@ def data_frame_file():
     # df_col = ["test1", "test2"]
     df_a["备注"] = ["test1", "test2", "test3", "test4"]
     print(df_a.info())
-    # df_a.to_csv("/Users/zhanggong/Downloads/test2.csv")
+    # df_a.to_csv("test2.csv")
 
 
 def data_frame_json():
