@@ -9,13 +9,13 @@ import pandas as pd
 #         having count(managerId) >= 5);
 def find_managers(employee: pd.DataFrame) -> pd.DataFrame:
     # df = employee.groupby('managerId').size().reset_index(name='manageCount')
-    df = employee.groupby('managerId').size()
-    df = df.reset_index(name='manageCount')
+    df = employee.groupby(['managerId'], as_index=False)['name'].count()
+    df.rename(columns={'name': 'manageCount'}, inplace=True)
     print(df)
-    # df = df[df['manageCount'] >= 5]
-    # print(df)
-    # df = employee.merge(df, left_on='id', right_on='managerId', how='left')
-    # df = df[~df['manageCount'].isnull()][['name']]
+    df = df[df['manageCount'] >= 5]
+    print(df)
+    df = employee.merge(df, left_on='id', right_on='managerId', how='left')
+    df = df[~df['manageCount'].isnull()][['name']]
     return df
 
 
