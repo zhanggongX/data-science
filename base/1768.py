@@ -1,6 +1,6 @@
 def merge_alternate(word1: str, word2: str) -> str:
     i, j, x, y = 0, 0, len(word1), len(word2)
-    res = ''
+    res = ""
     while i < x or j < y:
         if i < x:
             res += word1[i]
