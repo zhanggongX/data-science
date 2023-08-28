@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 
 
 def pandas_read():
-    df = pd.read_csv('../test.csv')
+    df = pd.read_csv('test.csv')
     print(df)
     # engine = create_engine('jdbc:mysql://localhost:3306')
     # engine = create_engine('mysql+mysqldb://root:mysql@localhost:3306/blog')
