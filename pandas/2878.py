@@ -1,6 +1,9 @@
-import pandas as pd
 from typing import List
 
+import pandas as pd
+
+def getDataframeSize(players: pd.DataFrame) -> List[int]:
+    return [players.shape[0], players.shape[1]]
 
 def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
     cols = ['student_id', 'age']
@@ -16,4 +19,6 @@ if __name__ == '__main__':
                     [4, 20]]
 
     res = createDataframe(student_data)
+    res = getDataframeSize(res)
+
     print(res)
