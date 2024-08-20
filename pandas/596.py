@@ -1,11 +1,12 @@
+
 import pandas as pd
 
 
+# select class from Courses group by class having count(student) >= 5;
 def find_classes(courses: pd.DataFrame) -> pd.DataFrame:
-    df = courses.groupby(['class']).agg({'student': 'count'}).reset_index()
-    df.sort_values(by='student', ascending=False, inplace=True)
-    print(df)
-    return df[df['student'] >= 5][['class']]
+    df = courses.groupby('class')['student'].count().reset_index()
+    df = df[df['student'] >=5]
+    return df[['class']]
 
 
 if __name__ == '__main__':
