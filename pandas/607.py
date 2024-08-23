@@ -1,3 +1,5 @@
+from xml.etree.ElementInclude import include
+
 import pandas as pd
 
 
@@ -6,14 +8,30 @@ import pandas as pd
 # (select s.sales_id from SalesPerson s
 # left join  Orders o on s.sales_id = o.sales_id
 # left join Company c on o.com_id = c.com_id where c.name = 'RED');
-def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
-    df = orders.merge(company, on='com_id', how='left')
-    red_sales_df = df[df['name'] == 'RED']['sales_id']
-    print(red_sales_df)
 
-    df = sales_person[~sales_person['sales_id'].isin(red_sales_df)][['name']]
-    print(df)
-    return df
+# select s.name from
+# SalesPerson s
+# left join orders o on s.sales_id = o.sales_id
+# left join Company c on o.com_id = c.com_id
+# group by s.name having sum(case c.name when 'RED' then 1 else 0 end) = 0;
+
+def count_company(x) -> int:
+    ans = 0
+    for i in range(len(x)):
+        s = x.iloc[i]['name_y']
+        if s == 'RED':
+            ans += 1
+    return ans
+
+def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
+    # return sales_person[~sales_person.sales_id.isin(orders[orders.com_id.isin(company[company.name == 'RED'].com_id)].sales_id)]
+    # 合并数据
+    df = sales_person.merge(orders, left_on='sales_id', right_on='sales_id', how='left').merge(company, left_on='com_id', right_on='com_id', how='left')
+    df = df.groupby(['name_x']).apply(count_company, include_groups=False)
+    df = df.reset_index()
+    df.rename(columns={'name_x':'name', 0: 'redCount'}, inplace=True)
+    return df[df['redCount'] == 0][['name']]
+
 
 
 if __name__ == '__main__':
