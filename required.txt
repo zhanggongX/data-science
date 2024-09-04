@@ -1,0 +1,20 @@
+requests
+
+pandas
+openpyxl
+
+beautifulsoup4
+lxml
+
+selenium
+# Chrome
+
+matplotlib
+
+seaborn
+
+pyecharts
+
+jinja2
+
+pymysql
