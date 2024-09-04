@@ -1,9 +1,10 @@
-# pandas
+## pandas
+pandas 使用
+pandas 分析案例
 
-dir /pandas leetcode 打卡30天学习 pandas
+## algorithm
+leetcode python 解答
 
-https://leetcode.cn/studyplan/30-days-of-pandas/
+## xueyu
+一只小蜘蛛，抓一些数据给 pandas 分析使用
 
-dir /base python code base 
-
-https://leetcode.cn/studyplan/programming-skills/
