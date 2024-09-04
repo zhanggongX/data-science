@@ -6,7 +6,7 @@ pandas 检查数据
 
 
 def test_check_data():
-    douban_top_250_path = '../../data/TOP250.xlsx'
+    douban_top_250_path = '../../../data/TOP250.xlsx'
     df = pd.read_excel(douban_top_250_path)
 
     # 检查全部缺失值

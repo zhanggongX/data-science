@@ -6,7 +6,7 @@ pandas 检查重复数据
 
 
 def test_check_dup_data():
-    douban_top_250_path = '../../data/TOP250.xlsx'
+    douban_top_250_path = '../../../data/TOP250.xlsx'
     df = pd.read_excel(douban_top_250_path)
 
     # 查找全部重复值

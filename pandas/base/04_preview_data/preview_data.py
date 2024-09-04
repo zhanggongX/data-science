@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def test_preview_data():
-    douban_top_250_path = '../../data/TOP250.txt'
+    douban_top_250_path = '../../../data/TOP250.txt'
     df = pd.read_table(douban_top_250_path, encoding='gb18030')
 
     # 看看数据多少行，多少列

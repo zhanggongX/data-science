@@ -6,8 +6,8 @@ pandas 读取 txt 数据
 
 
 def test_read_txt():
-    txt_file_path = '../../data/Titanic.txt'
-    txt_file_path250 = '../../data/TOP250.txt'
+    txt_file_path = '../../../data/Titanic.txt'
+    txt_file_path250 = '../../../data/TOP250.txt'
 
     data = pd.read_table(txt_file_path)
 

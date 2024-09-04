@@ -9,7 +9,7 @@ import seaborn as sns
 
 
 def test_statistics_data():
-    top_university_file_path = '../../data/university_rank_2024.xlsx'
+    top_university_file_path = '../../../data/university_rank_2024.xlsx'
     df = pd.read_excel(top_university_file_path)
 
     # 查看指定行

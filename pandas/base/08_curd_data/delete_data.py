@@ -7,7 +7,7 @@ import numpy as np
 
 
 def test_delete_data():
-    path = '../../data/东京奥运会奖牌数据.csv'
+    path = '../../../data/东京奥运会奖牌数据.csv'
     df = pd.read_csv(path)
 
     # 修改列名

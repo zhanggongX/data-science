@@ -7,7 +7,7 @@ pandas 读取 csv 数据
 
 
 def read_csv_test():
-    csv_data_path = '../../data/某招聘网站数据.csv'
+    csv_data_path = '../../../data/某招聘网站数据.csv'
 
     # 读取CSV文件
     df = pd.read_csv(csv_data_path)
@@ -54,7 +54,7 @@ def read_csv_test():
         print(chunk)
 
     # 循环读取数据
-    path = '../../data/'
+    path = '../../../data/'
     files_names = os.listdir(path)
     files_names = [f for f in files_names if f.lower().endswith(".xlsx")]
     df_list = []
