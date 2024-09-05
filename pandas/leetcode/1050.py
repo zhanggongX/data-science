@@ -1,17 +1,18 @@
 import pandas as pd
 
 
-# select unique_id, name from Employees left join EmployeeUNI on Employees.id = EmployeeUNI.id
+# select actor_id, director_id
+# from ActorDirector
+# group by actor_id, director_id
+# having count(timestamp) >= 3;
 def actors_and_directors(actor_director: pd.DataFrame) -> pd.DataFrame:
     df = actor_director.groupby(['actor_id', 'director_id']).size().reset_index(name='count')
-    # 使用条件筛选
-    # filtered_df = df.loc[df['Age'] > 25]
-    #
-    # print(filtered_df)
+    # actor_director['count'] = actor_director.groupby(['actor_id', 'director_id']).transform('size')
+    print(df)
 
-    df_new = df.loc[df['count'] >= 3]
-    print(df_new)
-    return df_new[['actor_id', 'director_id']]
+    df = df.loc[df['count'] >= 3]
+    print(df)
+    return df[['actor_id', 'director_id']]
 
 
 if __name__ == '__main__':
