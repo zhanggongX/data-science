@@ -1,20 +1,24 @@
-requests
-
+# 分析
 pandas
 openpyxl
 
+# 爬虫
+requests
 beautifulsoup4
 lxml
-
 selenium
 # Chrome
 
+# 图形显示
 matplotlib
-
 seaborn
-
 pyecharts
-
 jinja2
+scipy
+mplfinance
+plotly
 
+# 数据库
 pymysql
+
+# ./venv/bin/pip install -r required.txt

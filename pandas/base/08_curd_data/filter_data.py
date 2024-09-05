@@ -81,7 +81,18 @@ def test_filter_data():
     # gold_mean = df['金牌数'].mean()
     # df.query(f'金牌数 > {gold_mean}')
 
+    # isin - 筛选
+    # df = df[df.国家奥委会.isin(['中国', '美国', '英国', '日本', '巴西'])]
+    # df = df[~df.国家奥委会.isin(['中国', '美国', '英国', '日本', '巴西'])]
 
+    # select_dtypes 可以筛选制定数据类型的列
+    # df = df.select_dtypes(include=['int64'])
+
+    # 数据类型为和浮点数的列
+    # df = df.select_dtypes(include=['int', 'float64'])
+
+    # 逆筛选
+    # df = df.select_dtypes(exclude=['int', 'float64'])
     print(df)
 
 
