@@ -5,13 +5,17 @@ class ParseHeader:
         headers = {}
 
         for line in lines:
-            if line.startswith(':'):
-                continue
-            elif line.startswith('cookie'):
-                continue
-            else:
-                kv = line.split(":")
-                headers[kv[0]] = kv[1].strip()
+            if line.startswith('accept'):
+                headers['accept'] = line.split(":")[1].strip()
+            elif line.startswith('content-type'):
+                headers['content-type'] = line.split(":")[1].strip()
+            elif line.startswith('user-agent'):
+                headers['user-agent'] = line.split(":")[1].strip()
+            elif line.startswith('sec-ch-ua-platform'):
+                headers['sec-ch-ua-platform'] = line.split(":")[1].strip()
+            elif line.startswith('referer'):
+                headers['referer'] = line.split(":")[1].strip()
+
 
         print('parse_header:')
         print(headers)
