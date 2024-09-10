@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # 指定 ChromeDriver 的路径
-service = ChromeService(executable_path="/Users/x/devTools/chromedriver-mac-arm64/chromedriver")
+service = ChromeService(executable_path="/Users/zhanggong/devTools/chromedriver-mac-arm64/chromedriver")
 
 # 创建 Chrome WebDriver 实例
 driver = webdriver.Chrome(service=service)
