@@ -4,7 +4,7 @@ import threading
 disable_warnings()
 http = PoolManager()
 
-f = open('urls.txt','r')
+f = open('urls.txt', 'r')
 urlList = []
 while True:
     url = f.readline()
